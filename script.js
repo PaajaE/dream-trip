@@ -4,17 +4,20 @@
 class DreamTripApp {
     constructor() {
         this.currentLanguage = 'cs';
+        this.currentTheme = 'light';
         this.isScrolling = false;
         this.init();
     }
 
     init() {
         this.detectLanguage();
+        this.detectTheme();
         this.setupEventListeners();
         this.setupScrollAnimations();
         this.setupSmoothScrolling();
         this.setupNavigation();
         this.setupLanguageToggle();
+        this.setupThemeToggle();
         this.setupFormHandling();
         this.setupLazyLoading();
         this.setupAccessibility();
@@ -237,6 +240,23 @@ class DreamTripApp {
             });
         }
 
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+        
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                this.toggleTheme();
+            });
+        }
+        
+        if (mobileThemeToggle) {
+            mobileThemeToggle.addEventListener('click', () => {
+                this.toggleTheme();
+                this.closeMobileMenu();
+            });
+        }
+
         // Mobile menu toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -435,12 +455,67 @@ class DreamTripApp {
         });
     }
 
+    // Theme Detection and Management
+    detectTheme() {
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('dreamTripTheme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme) {
+            this.currentTheme = savedTheme;
+        } else {
+            this.currentTheme = prefersDark ? 'dark' : 'light';
+        }
+        
+        this.applyTheme(this.currentTheme);
+    }
+
+    applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        this.updateThemeToggle(theme);
+        localStorage.setItem('dreamTripTheme', theme);
+    }
+
+    toggleTheme() {
+        this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+        this.applyTheme(this.currentTheme);
+    }
+
+    updateThemeToggle(theme) {
+        const toggle = document.getElementById('theme-toggle');
+        const mobileToggle = document.getElementById('mobile-theme-toggle');
+        
+        if (toggle) {
+            const icon = toggle.querySelector('i');
+            if (icon) {
+                icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            }
+        }
+        
+        if (mobileToggle) {
+            const icon = mobileToggle.querySelector('i');
+            if (icon) {
+                icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            }
+        }
+    }
+
     // Language Toggle Setup
     setupLanguageToggle() {
         // Load saved language preference
         const savedLang = localStorage.getItem('dreamTripLanguage');
         if (savedLang && savedLang !== this.currentLanguage) {
             this.switchLanguage(savedLang);
+        }
+    }
+
+    // Theme Toggle Setup
+    setupThemeToggle() {
+        // Load saved theme preference
+        const savedTheme = localStorage.getItem('dreamTripTheme');
+        if (savedTheme) {
+            this.currentTheme = savedTheme;
+            this.applyTheme(savedTheme);
         }
     }
 
