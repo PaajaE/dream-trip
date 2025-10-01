@@ -1,0 +1,21 @@
+# Dream Trip - Robots.txt
+# SEO optimization for search engines
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://dreamtrip.cz/sitemap.xml
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all content
+Allow: /en/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Crawl delay (optional)
+Crawl-delay: 1

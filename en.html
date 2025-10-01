@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Trip - Your Adventure, Planned for You</title>
+    <meta name="description" content="Personalized travel itineraries for families, couples, and explorers. Authentic adventures without the stress of planning.">
+    <meta name="keywords" content="travel, itinerary, planning, family trips, adventure, Europe">
+    <meta name="author" content="Pavel and Lenka - Dream Trip">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dreamtrip.cz/en">
+    <meta property="og:title" content="Dream Trip - Your Adventure, Planned for You">
+    <meta property="og:description" content="Personalized travel itineraries for families, couples, and explorers. Authentic adventures without the stress of planning.">
+    <meta property="og:image" content="https://dreamtrip.cz/images/hero-bg.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dreamtrip.cz/en">
+    <meta property="twitter:title" content="Dream Trip - Your Adventure, Planned for You">
+    <meta property="twitter:description" content="Personalized travel itineraries for families, couples, and explorers. Authentic adventures without the stress of planning.">
+    <meta property="twitter:image" content="https://dreamtrip.cz/images/hero-bg.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Dream Trip",
+        "description": "Personalized travel itineraries for families, couples, and explorers",
+        "url": "https://dreamtrip.cz/en",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "hello@dreamtrip.cz",
+            "contactType": "customer service"
+        },
+        "founder": [
+            {
+                "@type": "Person",
+                "name": "Pavel"
+            },
+            {
+                "@type": "Person", 
+                "name": "Lenka"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Pico CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Dream Trip</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#about" class="nav-link">About Us</a></li>
+            <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+            <li><a href="#showcase" class="nav-link">Showcase</a></li>
+            <li><a href="#packages" class="nav-link">Packages</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li>
+                <button id="lang-toggle" class="secondary" aria-label="Switch language">
+                    <i class="fas fa-globe"></i> CS
+                </button>
+            </li>
+            <li>
+                <button class="mobile-menu-toggle" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <strong>Dream Trip</strong>
+                <button class="mobile-menu-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-menu-nav">
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#showcase" class="nav-link">Showcase</a>
+                <a href="#packages" class="nav-link">Packages</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="mobile-menu-footer">
+                <button id="mobile-lang-toggle" class="secondary" aria-label="Switch language">
+                    <i class="fas fa-globe"></i> CS
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                 alt="Scenic mountain landscape" loading="lazy">
+        </div>
+        <div class="hero-parallax hero-parallax-1"></div>
+        <div class="hero-parallax hero-parallax-2"></div>
+        <div class="hero-parallax hero-parallax-3"></div>
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="emoji">👉</span>
+                        <span class="title-text">Your Adventure, Planned for You</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Personalized travel itineraries for families, couples, and explorers who want authentic adventures without the stress of planning.
+                    </p>
+                    <button class="cta-button primary" onclick="scrollToSection('packages')">
+                        <i class="fas fa-map-marked-alt"></i>
+                        Get Your First Plan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        We are <strong>Pavel and Lenka</strong> – passionate travelers who spent years exploring the world on our own.
+                    </p>
+                    <p>
+                        We've hiked around an 8,000m Himalayan peak, crossed the Solomon Islands, road-tripped through South America and Oceania, 
+                        and now explore nature with our little son under the stars, in tents, or in unique guesthouses.
+                    </p>
+                    <p>
+                        We love digging into maps, photos, and guides to uncover the best views, hidden trails, and clever travel hacks. 
+                        Now we want to share that passion and experience with you – so you can enjoy meaningful journeys without the overwhelm.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         alt="Pavel and Lenka traveling" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section section-alt">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1️⃣</div>
+                    <h3>You tell us your wishes</h3>
+                    <p>Budget, style, duration – everything that matters to you.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2️⃣</div>
+                    <h3>We research and prepare</h3>
+                    <p>We create a tailor-made plan based on our experience.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3️⃣</div>
+                    <h3>You receive detailed itinerary</h3>
+                    <p>Tips, maps, options – everything ready to use.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4️⃣</div>
+                    <h3>You go enjoy</h3>
+                    <p>Peace of mind and adventure guaranteed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Section -->
+    <section id="showcase" class="section">
+        <div class="container">
+            <h2>Showcase: Sample Itinerary</h2>
+            <p class="section-subtitle">See how your custom plan could look</p>
+            
+            <div class="showcase-content">
+                <div class="showcase-intro">
+                    <p>
+                        We don't just give you a list of places. We design a journey that matches your style, budget, and time.
+                    </p>
+                </div>
+                
+                <div class="itinerary-example">
+                    <h3>Example: 3 Days in Northern Poland</h3>
+                    <div class="itinerary-days">
+                        <div class="day">
+                            <h4>Day 1: Arrival</h4>
+                            <ul>
+                                <li>Arrival, check-in at cozy guesthouse</li>
+                                <li>Evening walk to a viewpoint for sunset</li>
+                                <li>Dinner tip: family-run tavern with local food</li>
+                            </ul>
+                        </div>
+                        <div class="day">
+                            <h4>Day 2: Waterfalls and Lake</h4>
+                            <ul>
+                                <li>Morning hike to waterfalls</li>
+                                <li>Afternoon swim at a hidden lake</li>
+                                <li>Alternative: small regional museum in case of rain</li>
+                            </ul>
+                        </div>
+                        <div class="day">
+                            <h4>Day 3: Forest and Historic Town</h4>
+                            <ul>
+                                <li>Slow breakfast, short loop trail in the forest</li>
+                                <li>On the way back: stop at a historic town for coffee & cake</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features-grid">
+                    <h3>Every plan includes:</h3>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Maps & GPS points (viewpoints, parking, campsites, trails)</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bed"></i>
+                            <span>Accommodation suggestions (wild camping, guesthouses, unique stays)</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-hiking"></i>
+                            <span>Activity ideas (families, couples, adventurers)</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-umbrella"></i>
+                            <span>Backup options (rainy days, tired kids)</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Travel hacks (where to save, where to splurge)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="section section-alt">
+        <div class="container">
+            <h2>Packages & Pricing</h2>
+            <div class="packages-grid">
+                <div class="package">
+                    <div class="package-header">
+                        <div class="package-icon">🌱</div>
+                        <h3>Sample Plan</h3>
+                        <div class="package-price">Free / Symbolic</div>
+                    </div>
+                    <div class="package-content">
+                        <p>Weekend (2–3 days) itinerary to see how it works.</p>
+                        <ul>
+                            <li>Basic itinerary</li>
+                            <li>Activity tips</li>
+                            <li>Meal recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="package featured">
+                    <div class="package-badge">Most Popular</div>
+                    <div class="package-header">
+                        <div class="package-icon">✈️</div>
+                        <h3>Basic Plan</h3>
+                        <div class="package-price">€40 (~1 000 CZK)</div>
+                    </div>
+                    <div class="package-content">
+                        <p>Up to 7 days. Daily itinerary + tips for activities & meals.</p>
+                        <ul>
+                            <li>Detailed daily plan</li>
+                            <li>Maps and GPS coordinates</li>
+                            <li>Accommodation recommendations</li>
+                            <li>Restaurant tips</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="package">
+                    <div class="package-header">
+                        <div class="package-icon">🗺️</div>
+                        <h3>Premium Plan</h3>
+                        <div class="package-price">€100 (~2 500 CZK)</div>
+                    </div>
+                    <div class="package-content">
+                        <p>Up to 14 days. Detailed itinerary, accommodation suggestions, multiple options per day, travel hacks.</p>
+                        <ul>
+                            <li>Comprehensive itinerary</li>
+                            <li>Multiple options per day</li>
+                            <li>Exclusive tips</li>
+                            <li>Backup plans</li>
+                            <li>24/7 support</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="package">
+                    <div class="package-header">
+                        <div class="package-icon">🌍</div>
+                        <h3>Custom Plan</h3>
+                        <div class="package-price">On request</div>
+                    </div>
+                    <div class="package-content">
+                        <p>Anything longer or exotic – flexible pricing, still affordable.</p>
+                        <ul>
+                            <li>Unlimited duration</li>
+                            <li>Exotic destinations</li>
+                            <li>Special requirements</li>
+                            <li>Personal consultation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pricing-note">
+                <p>
+                    <i class="fas fa-info-circle"></i>
+                    <strong>For now we keep prices symbolic</strong> – you get much more value than you pay, 
+                    while we gain feedback and references.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose" class="section">
+        <div class="container">
+            <h2>Why Choose Us?</h2>
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Real travelers</h3>
+                    <p>We're not a travel agency, but people with real experience</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-euro-sign"></i>
+                    <h3>Affordable</h3>
+                    <p>You pay for planning, not overpriced packages</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Flexible</h3>
+                    <p>Nature, culture, family-friendly or adventure – whatever you need</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-clock"></i>
+                    <h3>Time-saving</h3>
+                    <p>No more endless scrolling and searching</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section section-alt">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Best family trip we ever had – everything was ready, we just enjoyed."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Anna, 34</strong>
+                        <span>Mother of two</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Finally someone who understands what we really want to experience from traveling. The plan was perfect!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Tom, 28</strong>
+                        <span>Adventurer</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"We saved so much time and money thanks to their tips. Great hidden gems!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Marie, 42</strong>
+                        <span>Weekend getaway couple</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="cta" class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready for your next adventure?</h2>
+                <p>Start your journey today and get a custom itinerary</p>
+                <button class="cta-button primary large" onclick="scrollToSection('contact')">
+                    <i class="fas fa-paper-plane"></i>
+                    Get Your Itinerary
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dream Trip</h3>
+                    <p>Your adventure, planned for you</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:hello@dreamtrip.cz">hello@dreamtrip.cz</a>
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>
+                    <strong>We're just starting</strong> – join us on this journey!<br>
+                    Be among the first to get a custom trip for free or symbolic price.
+                </p>
+                <p class="copyright">
+                    © 2024 Dream Trip. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

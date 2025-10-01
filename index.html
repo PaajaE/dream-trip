@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Trip - Vaše dobrodružství, naplánované pro vás</title>
+    <meta name="description" content="Personalizované cestovní itineráře pro rodiny, páry a dobrodruhy. Autentická dobrodružství bez stresu z plánování.">
+    <meta name="keywords" content="cestování, itinerář, plánování, rodinné výlety, dobrodružství, Česká republika">
+    <meta name="author" content="Pavel a Lenka - Dream Trip">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dreamtrip.cz/">
+    <meta property="og:title" content="Dream Trip - Vaše dobrodružství, naplánované pro vás">
+    <meta property="og:description" content="Personalizované cestovní itineráře pro rodiny, páry a dobrodruhy. Autentická dobrodružství bez stresu z plánování.">
+    <meta property="og:image" content="https://dreamtrip.cz/images/hero-bg.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dreamtrip.cz/">
+    <meta property="twitter:title" content="Dream Trip - Vaše dobrodružství, naplánované pro vás">
+    <meta property="twitter:description" content="Personalizované cestovní itineráře pro rodiny, páry a dobrodruhy. Autentická dobrodružství bez stresu z plánování.">
+    <meta property="twitter:image" content="https://dreamtrip.cz/images/hero-bg.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Dream Trip",
+        "description": "Personalizované cestovní itineráře pro rodiny, páry a dobrodruhy",
+        "url": "https://dreamtrip.cz",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "hello@dreamtrip.cz",
+            "contactType": "customer service"
+        },
+        "founder": [
+            {
+                "@type": "Person",
+                "name": "Pavel"
+            },
+            {
+                "@type": "Person", 
+                "name": "Lenka"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Pico CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Dream Trip</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#about" class="nav-link">O nás</a></li>
+            <li><a href="#how-it-works" class="nav-link">Jak to funguje</a></li>
+            <li><a href="#showcase" class="nav-link">Ukázka</a></li>
+            <li><a href="#packages" class="nav-link">Balíčky</a></li>
+            <li><a href="#contact" class="nav-link">Kontakt</a></li>
+            <li>
+                <button id="lang-toggle" class="secondary" aria-label="Přepnout jazyk">
+                    <i class="fas fa-globe"></i> EN
+                </button>
+            </li>
+            <li>
+                <button class="mobile-menu-toggle" aria-label="Otevřít menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <strong>Dream Trip</strong>
+                <button class="mobile-menu-close" aria-label="Zavřít menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-menu-nav">
+                <a href="#about" class="nav-link">O nás</a>
+                <a href="#how-it-works" class="nav-link">Jak to funguje</a>
+                <a href="#showcase" class="nav-link">Ukázka</a>
+                <a href="#packages" class="nav-link">Balíčky</a>
+                <a href="#contact" class="nav-link">Kontakt</a>
+            </nav>
+            <div class="mobile-menu-footer">
+                <button id="mobile-lang-toggle" class="secondary" aria-label="Přepnout jazyk">
+                    <i class="fas fa-globe"></i> EN
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                 alt="Scenic mountain landscape" loading="lazy">
+        </div>
+        <div class="hero-parallax hero-parallax-1"></div>
+        <div class="hero-parallax hero-parallax-2"></div>
+        <div class="hero-parallax hero-parallax-3"></div>
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="emoji">👉</span>
+                        <span class="title-text">Vaše dobrodružství, naplánované pro vás</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Personalizované cestovní itineráře pro rodiny, páry a dobrodruhy, kteří chtějí autentická dobrodružství bez stresu z plánování.
+                    </p>
+                    <button class="cta-button primary" onclick="scrollToSection('packages')">
+                        <i class="fas fa-map-marked-alt"></i>
+                        Získejte svůj první plán
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>O nás</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Jsme <strong>Pavel a Lenka</strong> – vášniví cestovatelé, kteří strávili roky objevováním světa na vlastní pěst.
+                    </p>
+                    <p>
+                        Prošli jsme kolem 8000m himálajského vrcholu, přešli Šalamounovy ostrovy, projeli Jižní Ameriku a Oceánii, 
+                        a nyní objevujeme přírodu se svým malým synem pod hvězdami, ve stanech nebo v jedinečných penzionech.
+                    </p>
+                    <p>
+                        Milujeme hledání v mapách, fotografiích a průvodcích, abychom odhalili ty nejlepší výhledy, skryté stezky 
+                        a chytré cestovatelské triky. Nyní chceme sdílet tuto vášeň a zkušenosti s vámi – abyste si mohli užít 
+                        smysluplné cesty bez přetížení.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         alt="Pavel a Lenka na cestách" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section section-alt">
+        <div class="container">
+            <h2>Jak to funguje</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1️⃣</div>
+                    <h3>Řeknete nám své přání</h3>
+                    <p>Rozpočet, styl, délka pobytu – vše, co je pro vás důležité.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2️⃣</div>
+                    <h3>My zkoumáme a připravíme</h3>
+                    <p>Vytvoříme vám plán na míru na základě našich zkušeností.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3️⃣</div>
+                    <h3>Získáte detailní itinerář</h3>
+                    <p>Tipy, mapy, možnosti – vše připravené k použití.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4️⃣</div>
+                    <h3>Jdete si užít</h3>
+                    <p>Klidné svědomí a dobrodružství zaručeno.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Section -->
+    <section id="showcase" class="section">
+        <div class="container">
+            <h2>Ukázka: Vzorový itinerář</h2>
+            <p class="section-subtitle">Podívejte se, jak by mohl vypadat váš vlastní plán</p>
+            
+            <div class="showcase-content">
+                <div class="showcase-intro">
+                    <p>
+                        Nedáváme vám jen seznam míst. Navrhujeme cestu, která odpovídá vašemu stylu, rozpočtu a času.
+                    </p>
+                </div>
+                
+                <div class="itinerary-example">
+                    <h3>Příklad: 3 dny v severním Polsku</h3>
+                    <div class="itinerary-days">
+                        <div class="day">
+                            <h4>Den 1: Příjezd</h4>
+                            <ul>
+                                <li>Příjezd, ubytování v útulném penzionu</li>
+                                <li>Večerní procházka k vyhlídce na západ slunce</li>
+                                <li>Tip na večeři: rodinná hospoda s místní kuchyní</li>
+                            </ul>
+                        </div>
+                        <div class="day">
+                            <h4>Den 2: Vodopády a jezero</h4>
+                            <ul>
+                                <li>Ranní túra k vodopádům</li>
+                                <li>Odpolední koupání v skrytém jezeře</li>
+                                <li>Alternativa: malé regionální muzeum při dešti</li>
+                            </ul>
+                        </div>
+                        <div class="day">
+                            <h4>Den 3: Les a historické město</h4>
+                            <ul>
+                                <li>Pomalá snídaně, krátká okružní stezka v lese</li>
+                                <li>Na zpáteční cestě: zastávka v historickém městě na kávu a dort</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features-grid">
+                    <h3>Každý plán obsahuje:</h3>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Mapy a GPS body (vyhlídky, parkoviště, kempy, stezky)</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bed"></i>
+                            <span>Návrhy ubytování (divoké kempování, penziony, jedinečné pobyty)</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-hiking"></i>
+                            <span>Nápady na aktivity (rodiny, páry, dobrodruzi)</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-umbrella"></i>
+                            <span>Záložní možnosti (deštivé dny, unavené děti)</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Cestovatelské triky (kde ušetřit, kde si dopřát)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="section section-alt">
+        <div class="container">
+            <h2>Balíčky a ceny</h2>
+            <div class="packages-grid">
+                <div class="package">
+                    <div class="package-header">
+                        <div class="package-icon">🌱</div>
+                        <h3>Vzorkový plán</h3>
+                        <div class="package-price">Zdarma / symbolická cena</div>
+                    </div>
+                    <div class="package-content">
+                        <p>Víkendový (2–3 dny) itinerář, abyste viděli, jak to funguje.</p>
+                        <ul>
+                            <li>Základní itinerář</li>
+                            <li>Tipy na aktivity</li>
+                            <li>Doporučení na jídlo</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="package featured">
+                    <div class="package-badge">Nejpopulárnější</div>
+                    <div class="package-header">
+                        <div class="package-icon">✈️</div>
+                        <h3>Základní plán</h3>
+                        <div class="package-price">€40 (~1 000 Kč)</div>
+                    </div>
+                    <div class="package-content">
+                        <p>Až 7 dní. Denní itinerář + tipy na aktivity a jídlo.</p>
+                        <ul>
+                            <li>Detailní denní plán</li>
+                            <li>Mapy a GPS souřadnice</li>
+                            <li>Doporučení na ubytování</li>
+                            <li>Tipy na restaurace</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="package">
+                    <div class="package-header">
+                        <div class="package-icon">🗺️</div>
+                        <h3>Prémiový plán</h3>
+                        <div class="package-price">€100 (~2 500 Kč)</div>
+                    </div>
+                    <div class="package-content">
+                        <p>Až 14 dní. Detailní itinerář, návrhy ubytování, více možností denně, cestovatelské triky.</p>
+                        <ul>
+                            <li>Komplexní itinerář</li>
+                            <li>Více možností na den</li>
+                            <li>Exkluzivní tipy</li>
+                            <li>Záložní plány</li>
+                            <li>24/7 podpora</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="package">
+                    <div class="package-header">
+                        <div class="package-icon">🌍</div>
+                        <h3>Vlastní plán</h3>
+                        <div class="package-price">Na požádání</div>
+                    </div>
+                    <div class="package-content">
+                        <p>Cokoli delšího nebo exotického – flexibilní ceny, stále dostupné.</p>
+                        <ul>
+                            <li>Neomezená délka</li>
+                            <li>Exotické destinace</li>
+                            <li>Speciální požadavky</li>
+                            <li>Osobní konzultace</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pricing-note">
+                <p>
+                    <i class="fas fa-info-circle"></i>
+                    <strong>Prozatím držíme ceny symbolické</strong> – získáte mnohem více hodnoty, než zaplatíte, 
+                    zatímco my získáváme zpětnou vazbu a reference.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose" class="section">
+        <div class="container">
+            <h2>Proč si vybrat nás?</h2>
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Skuteční cestovatelé</h3>
+                    <p>Nejsme cestovní kancelář, ale lidé s reálnými zkušenostmi</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-euro-sign"></i>
+                    <h3>Dostupné</h3>
+                    <p>Platíte za plánování, ne za předražené balíčky</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Flexibilní</h3>
+                    <p>Příroda, kultura, rodinné nebo dobrodružné – co potřebujete</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-clock"></i>
+                    <h3>Úspora času</h3>
+                    <p>Už žádné nekonečné scrollování a hledání</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section section-alt">
+        <div class="container">
+            <h2>Co říkají naši klienti</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Nejlepší rodinná dovolená, kterou jsme kdy měli – vše bylo připravené, my jsme si jen užívali."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Anna, 34</strong>
+                        <span>Maminka dvou dětí</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Konečně někdo, kdo rozumí tomu, co skutečně chceme z cestování zažít. Plán byl perfektní!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Tomáš, 28</strong>
+                        <span>Dobrodruh</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Ušetřili jsme spoustu času a peněz díky jejich tipům. Skvělé skryté perly!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Marie, 42</strong>
+                        <span>Pár na víkendových výletech</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="cta" class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Připraveni na své další dobrodružství?</h2>
+                <p>Začněte svou cestu ještě dnes a získejte itinerář na míru</p>
+                <button class="cta-button primary large" onclick="scrollToSection('contact')">
+                    <i class="fas fa-paper-plane"></i>
+                    Získejte svůj itinerář
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dream Trip</h3>
+                    <p>Vaše dobrodružství, naplánované pro vás</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:hello@dreamtrip.cz">hello@dreamtrip.cz</a>
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Sledujte nás</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>
+                    <strong>Právě začínáme</strong> – připojte se k nám na této cestě!<br>
+                    Buďte mezi prvními, kteří získají vlastní cestu zdarma nebo za symbolickou cenu.
+                </p>
+                <p class="copyright">
+                    © 2024 Dream Trip. Všechna práva vyhrazena.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
