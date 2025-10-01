@@ -60,32 +60,47 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="container-fluid">
         <ul>
             <li><strong>Dream Trip</strong></li>
-        </ul>
-        <ul>
-            <li><a href="#about" class="nav-link">O nás</a></li>
-            <li><a href="#how-it-works" class="nav-link">Jak to funguje</a></li>
-            <li><a href="#showcase" class="nav-link">Ukázka</a></li>
-            <li><a href="#packages" class="nav-link">Balíčky</a></li>
-            <li><a href="#contact" class="nav-link">Kontakt</a></li>
-            <li>
+            <li class="mobile-toggles">
                 <button id="lang-toggle" class="secondary" aria-label="Přepnout jazyk">
                     <i class="fas fa-globe"></i> EN
                 </button>
             </li>
-            <li>
+            <li class="mobile-toggles">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Přepnout téma">
                     <i class="fas fa-moon"></i>
                 </button>
             </li>
             <li>
                 <button class="mobile-menu-toggle" aria-label="Otevřít menu">
-                    <i class="fas fa-bars"></i>
+                    <div class="burger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </li>
+        </ul>
+        <ul class="desktop-nav">
+            <li><a href="#about" class="nav-link">O nás</a></li>
+            <li><a href="#how-it-works" class="nav-link">Jak to funguje</a></li>
+            <li><a href="#showcase" class="nav-link">Ukázka</a></li>
+            <li><a href="#packages" class="nav-link">Balíčky</a></li>
+            <li><a href="#contact" class="nav-link">Kontakt</a></li>
+            <li class="desktop-toggles">
+                <button id="lang-toggle-desktop" class="secondary" aria-label="Přepnout jazyk">
+                    <i class="fas fa-globe"></i> EN
+                </button>
+            </li>
+            <li class="desktop-toggles">
+                <button id="theme-toggle-desktop" class="theme-toggle" aria-label="Přepnout téma">
+                    <i class="fas fa-moon"></i>
                 </button>
             </li>
         </ul>
@@ -94,12 +109,6 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-content">
-            <div class="mobile-menu-header">
-                <strong>Dream Trip</strong>
-                <button class="mobile-menu-close" aria-label="Zavřít menu">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
             <nav class="mobile-menu-nav">
                 <a href="#about" class="nav-link">O nás</a>
                 <a href="#how-it-works" class="nav-link">Jak to funguje</a>
@@ -107,14 +116,6 @@
                 <a href="#packages" class="nav-link">Balíčky</a>
                 <a href="#contact" class="nav-link">Kontakt</a>
             </nav>
-            <div class="mobile-menu-footer">
-                <button id="mobile-lang-toggle" class="secondary" aria-label="Přepnout jazyk">
-                    <i class="fas fa-globe"></i> EN
-                </button>
-                <button id="mobile-theme-toggle" class="theme-toggle" aria-label="Přepnout téma">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
         </div>
     </div>
 
@@ -166,7 +167,7 @@
                     </p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                    <img src="/us.jpeg" 
                          alt="Pavel a Lenka na cestách" loading="lazy">
                 </div>
             </div>

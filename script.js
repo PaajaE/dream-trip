@@ -206,24 +206,24 @@ class DreamTripApp {
 
     updateLanguageToggle(lang) {
         const toggle = document.getElementById('lang-toggle');
-        const mobileToggle = document.getElementById('mobile-lang-toggle');
+        const toggleDesktop = document.getElementById('lang-toggle-desktop');
         
         if (toggle) {
             const nextLang = lang === 'cs' ? 'EN' : 'CS';
             toggle.innerHTML = `<i class="fas fa-globe"></i> ${nextLang}`;
         }
         
-        if (mobileToggle) {
+        if (toggleDesktop) {
             const nextLang = lang === 'cs' ? 'EN' : 'CS';
-            mobileToggle.innerHTML = `<i class="fas fa-globe"></i> ${nextLang}`;
+            toggleDesktop.innerHTML = `<i class="fas fa-globe"></i> ${nextLang}`;
         }
     }
 
     // Event Listeners
     setupEventListeners() {
-        // Language toggle
+        // Language toggle (mobile and desktop)
         const langToggle = document.getElementById('lang-toggle');
-        const mobileLangToggle = document.getElementById('mobile-lang-toggle');
+        const langToggleDesktop = document.getElementById('lang-toggle-desktop');
         
         if (langToggle) {
             langToggle.addEventListener('click', () => {
@@ -232,17 +232,16 @@ class DreamTripApp {
             });
         }
         
-        if (mobileLangToggle) {
-            mobileLangToggle.addEventListener('click', () => {
+        if (langToggleDesktop) {
+            langToggleDesktop.addEventListener('click', () => {
                 const newLang = this.currentLanguage === 'cs' ? 'en' : 'cs';
                 this.switchLanguage(newLang);
-                this.closeMobileMenu();
             });
         }
 
-        // Theme toggle
+        // Theme toggle (mobile and desktop)
         const themeToggle = document.getElementById('theme-toggle');
-        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+        const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
         
         if (themeToggle) {
             themeToggle.addEventListener('click', () => {
@@ -250,27 +249,19 @@ class DreamTripApp {
             });
         }
         
-        if (mobileThemeToggle) {
-            mobileThemeToggle.addEventListener('click', () => {
+        if (themeToggleDesktop) {
+            themeToggleDesktop.addEventListener('click', () => {
                 this.toggleTheme();
-                this.closeMobileMenu();
             });
         }
 
         // Mobile menu toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuClose = document.querySelector('.mobile-menu-close');
         
         if (mobileMenuToggle) {
             mobileMenuToggle.addEventListener('click', () => {
-                this.openMobileMenu();
-            });
-        }
-        
-        if (mobileMenuClose) {
-            mobileMenuClose.addEventListener('click', () => {
-                this.closeMobileMenu();
+                this.toggleMobileMenu();
             });
         }
         
@@ -483,7 +474,7 @@ class DreamTripApp {
 
     updateThemeToggle(theme) {
         const toggle = document.getElementById('theme-toggle');
-        const mobileToggle = document.getElementById('mobile-theme-toggle');
+        const toggleDesktop = document.getElementById('theme-toggle-desktop');
         
         if (toggle) {
             const icon = toggle.querySelector('i');
@@ -492,8 +483,8 @@ class DreamTripApp {
             }
         }
         
-        if (mobileToggle) {
-            const icon = mobileToggle.querySelector('i');
+        if (toggleDesktop) {
+            const icon = toggleDesktop.querySelector('i');
             if (icon) {
                 icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
             }
@@ -637,10 +628,22 @@ class DreamTripApp {
     }
 
     // Mobile Menu Functions
+    toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu) {
+            if (mobileMenu.classList.contains('active')) {
+                this.closeMobileMenu();
+            } else {
+                this.openMobileMenu();
+            }
+        }
+    }
+
     openMobileMenu() {
         const mobileMenu = document.getElementById('mobile-menu');
         if (mobileMenu) {
             mobileMenu.classList.add('active');
+            document.body.classList.add('mobile-menu-open');
             document.body.style.overflow = 'hidden';
         }
     }
@@ -649,6 +652,7 @@ class DreamTripApp {
         const mobileMenu = document.getElementById('mobile-menu');
         if (mobileMenu) {
             mobileMenu.classList.remove('active');
+            document.body.classList.remove('mobile-menu-open');
             document.body.style.overflow = '';
         }
     }
